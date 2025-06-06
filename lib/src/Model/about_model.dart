@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class AboutModel {
@@ -16,6 +17,7 @@ class SocialLink{
   final String name;
   final IconData icon;
   final String url;
+  final Color cor;
   
-  SocialLink({required this.name,required this.icon,required this.url});
+  SocialLink({required this.name,required this.icon,required this.url, required this.cor}); 
 }

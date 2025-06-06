@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:utilidades/src/Controller/about_controller.dart';
 
 class AboutView extends StatelessWidget {
@@ -39,8 +40,8 @@ class AboutView extends StatelessWidget {
                 return Padding(padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: Column(
                   children: [
-                    IconButton(onPressed: () {}, icon: Icon(link.icon),color: Colors.blue,),
-                    Text(link.name,style: TextStyle(fontSize: 12),),
+                    IconButton(onPressed: () {}, icon: FaIcon(link.icon),color: link.cor,),
+                    Text(link.name,style: TextStyle(fontSize: 12,color: Colors.black)),
                   ],
                 ),
                 );
