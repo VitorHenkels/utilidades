@@ -25,7 +25,7 @@ class _ProductParseState extends State<ProductParse> {
       context,
     ).loadString("assets/data.json");
     final parsed = jsonDecode(jsonString);
-    return parsed['itens'] as List<dynamic>;
+    return parsed['items'] as List<dynamic>;
   }
 
   @override
