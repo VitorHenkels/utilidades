@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:isolate';
+//import 'dart:nativewrappers/_internal/vm/lib/isolate_patch.dart';
 
 import 'package:flutter/material.dart';
 
@@ -20,13 +22,23 @@ class _ProductParseState extends State<ProductParse> {
   }
 
   //ler os dados do json
-  Future<List<dynamic>> loadJson() async {
+/*   Future<List<dynamic>> loadJson() async {
     final jsonString = await DefaultAssetBundle.of(
       context,
     ).loadString("assets/data.json");
     final parsed = jsonDecode(jsonString);
     return parsed['items'] as List<dynamic>;
-  }
+  } */
+
+ //USANDO ISOLATE
+ Future<List<dynamic>> loadJson() async{
+  final jsonString = await DefaultAssetBundle.of(context).loadString("assets/data.json");
+
+  return await Isolate.run((){
+    final parsed = jsonDecode(jsonString);
+    return parsed['items'] as List<dynamic>;
+  });
+ }
 
   @override
   Widget build(BuildContext context) {
