@@ -7,5 +7,6 @@ import 'package:utilidades/src/app/app_widget.dart';
 void main() {
   //runApp(MaterialApp(home: Login(),));
   //runApp(MaterialApp(home: BuscaComStream(),));
-  runApp(MaterialApp(home: ProductParse(),));
+  //runApp(MaterialApp(home: ProductParse(),));
+  runApp(AppWidget());
 }

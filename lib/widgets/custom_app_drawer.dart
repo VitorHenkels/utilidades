@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:utilidades/services/auth_service.dart';
+import 'package:utilidades/src/Views/login_view.dart';
 import 'package:utilidades/src/app/app_menu.dart';
 
 class CustomAppDrawer extends StatelessWidget {
@@ -28,7 +30,20 @@ class CustomAppDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pushReplacementNamed(context, item.route);
               },
-            ) ,)
+            ) ,),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: Text("LogOut"),
+              onTap: () {
+                AuthService.logout();
+                Navigator.pushAndRemoveUntil(
+                  context, 
+                  MaterialPageRoute(builder: (_) => LoginView()),
+                  (route) => false
+                  );
+              },
+            )
         ],
       ),
     );
