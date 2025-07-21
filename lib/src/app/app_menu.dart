@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:utilidades/src/Model/menu_model.dart';
 import 'package:utilidades/src/Views/about_view.dart';
+import 'package:utilidades/src/Views/bloc_example_view.dart';
 import 'package:utilidades/src/Views/converter_view.dart';
 import 'package:utilidades/src/Views/home_view.dart';
+import 'package:utilidades/src/Views/login_river.dart';
 import 'package:utilidades/src/Views/perso_view.dart';
 import 'package:utilidades/src/Views/produtos_list_page.dart';
+import 'package:utilidades/src/Views/riverpod_exemple.dart';
 
 final List<MenuModel> appMenuItems = [
   MenuModel(
@@ -36,5 +40,23 @@ final List<MenuModel> appMenuItems = [
     icon: Icons.people,
     route: "/pessoas",
     page: PersoView(),
+  ),
+  MenuModel(
+    title: "Riverpod",
+    icon: Icons.settings,
+    route: "/riverpod",
+    page: ProviderScope(child: RiverpodExemple()),
+  ),
+  MenuModel(
+    title: "login River",
+    icon: Icons.settings,
+    route: "/loginriver",
+    page: ProviderScope(child: LoginRiver()),
+  ),
+  MenuModel(
+    title: "Bloc",
+    icon: Icons.settings_backup_restore,
+    route: "/bloc",
+    page: BlocExampleView(),
   ),
 ];
