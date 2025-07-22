@@ -5,14 +5,18 @@ import 'package:utilidades/dartAvancado/isolate/product_parse.dart';
 import 'package:utilidades/dartAvancado/stream/busca_com_stream.dart';
 import 'package:utilidades/src/Views/counter_cubit.dart';
 import 'package:utilidades/src/app/app_widget.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
   //runApp(MaterialApp(home: Login(),));
   //runApp(MaterialApp(home: BuscaComStream(),));
   //runApp(MaterialApp(home: ProductParse(),));
   //runApp(AppWidget());
 
-  runApp(myApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp( AppWidget());
 }
 
 class myApp extends StatelessWidget {

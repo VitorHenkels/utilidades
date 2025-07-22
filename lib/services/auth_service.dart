@@ -16,7 +16,7 @@ class AuthService {
     final token = prefs.getString('jwt_token');
 
     if (token == null) {
-      Navigator.pushReplacementNamed(context, '/login');
+      //Navigator.pushReplacementNamed(context, '/login');
       return false;
     }
     return true;
